@@ -6,17 +6,18 @@
     "author": "Gregg Tabot <gregg@flox.social>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/gtabot/flox-protocol.git"
+        "url": "https://github.com/gtabot/flox-proto.git"
     },
     "keywords": [
         "flox",
         "bluesky",
         "atproto",
-        "encrypted",
-        "communities",
-        "protocol",
-        "pds"
+        "encrypted communities",
+        "protocol"
     ],
+    "engines": {
+        "node": ">=18.0.0 <23.0.0"
+    },
     "scripts": {
         "build": "tsc",
         "update": "ncu -u && npm install",
