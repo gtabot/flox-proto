@@ -1,7 +1,8 @@
 {
     "name": "flox-protocol",
-    "version": "0.0.1",
     "description": "Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.",
+    "type": "module",
+    "version": "0.0.1",
     "author": "Gregg Tabot <gregg@flox.social>",
     "repository": {
         "type": "git",
@@ -15,5 +16,16 @@
         "communities",
         "protocol",
         "pds"
-    ]
+    ],
+    "scripts": {
+        "build": "tsc",
+        "update": "ncu -u && npm install",
+        "validate": "ts-node scripts/validate-lexicons.ts"
+    },
+    "devDependencies": {
+        "@atproto/api": "^0.14.13",
+        "@atproto/lexicon": "^0.4.9",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
+    }
 }
