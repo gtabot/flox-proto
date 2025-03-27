@@ -1,10 +1,10 @@
 {
     "lexicon": 1,
-    "id": "app.flox.feed.Post",
+    "id": "app.flox.flok.join.Response",
     "defs": {
         "main": {
             "type": "record",
-            "description": "Record containing a Flox post with encrypted content.",
+            "description": "A response to a join request to a Flok.",
             "key": "tid",
             "record": {
                 "type": "object",
@@ -17,20 +17,19 @@
                 "properties": {
                     "flokRef": {
                         "type": "string",
-                        "description": "A reference used to identify the Flok."
+                        "description": "Reference to the Flok"
                     },
                     "token": {
                         "type": "string",
-                        "description": "A unique token used for validating references."
+                        "description": "Validation token"
                     },
                     "content": {
                         "type": "string",
-                        "description": "Base64-encoded string containing the encrypted content."
+                        "description": "Base64-encoded string containing the encrypted content"
                     },
                     "createdAt": {
                         "type": "string",
-                        "format": "datetime",
-                        "description": "Client-declared timestamp when this post was created."
+                        "format": "datetime"
                     }
                 }
             }

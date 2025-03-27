@@ -3,6 +3,10 @@
     "version": "0.0.1",
     "description": "Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.",
     "author": "Gregg Tabot <gregg@flox.social>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gtabot/flox-protocol.git"
+    },
     "keywords": [
         "flox",
         "bluesky",
@@ -11,9 +15,5 @@
         "communities",
         "protocol",
         "pds"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gtabot/flox-protocol.git"
-    }
+    ]
 }
