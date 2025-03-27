@@ -1,0 +1,39 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.feed.post",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Record containing a Flox post with encrypted content.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flockRef",
+                    "key",
+                    "content",
+                    "createdAt"
+                ],
+                "properties": {
+                    "flockRef": {
+                        "type": "string",
+                        "description": "A reference used to identify the Flock this post is scoped to."
+                    },
+                    "key": {
+                        "type": "string",
+                        "description": "A unique token used for validating the scope of the post."
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Base64-encoded string containing the encrypted post content and metadata."
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Client-declared timestamp when this post was created."
+                    }
+                }
+            }
+        }
+    }
+}

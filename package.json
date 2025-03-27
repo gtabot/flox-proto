@@ -3,12 +3,6 @@
     "version": "0.0.1",
     "description": "Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.",
     "author": "Gregg Tabot <gregg@flox.social>",
-    "license": "SEE LICENSE IN LICENSE",
-    "type": "module",
-    "main": "index.js",
-    "engines": {
-        "node": ">=18"
-    },
     "keywords": [
         "flox",
         "bluesky",
@@ -21,15 +15,5 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gtabot/flox-protocol.git"
-    },
-    "scripts": {
-        "update": "ncu -u && npm install"
-    },
-    "dependencies": {
-        "@atproto/api": "^0.14.12",
-        "@atproto/lexicon": "^0.4.9"
-    },
-    "devDependencies": {
-        "typescript": "^5.8.2"
     }
 }

@@ -1,0 +1,65 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flock.flock",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Defines a Flock community with metadata, privacy rules, and optional access costs. Sensitive fields may be encrypted and managed by the AppView.",
+            "key": "cid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "privacy",
+                    "createdAt"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 64,
+                        "description": "Display name for the Flock."
+                    },
+                    "description": {
+                        "type": "string",
+                        "maxLength": 256,
+                        "description": "Optional description of the Flock."
+                    },
+                    "privacy": {
+                        "type": "string",
+                        "enum": [
+                            "public",
+                            "private"
+                        ],
+                        "description": "Whether the Flock is visible for public discovery or not."
+                    },
+                    "maxMembers": {
+                        "type": "integer",
+                        "description": "Optional cap on total number of members allowed."
+                    },
+                    "joinCost": {
+                        "type": "object",
+                        "description": "Optional cost to join this Flock.",
+                        "properties": {
+                            "amount": {
+                                "type": "number",
+                                "description": "Cost in currency units."
+                            },
+                            "currency": {
+                                "type": "string",
+                                "enum": [
+                                    "USD"
+                                ],
+                                "description": "Currency code."
+                            }
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Timestamp of Flock creation."
+                    }
+                }
+            }
+        }
+    }
+}
