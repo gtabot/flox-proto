@@ -4,7 +4,7 @@
     "defs": {
         "main": {
             "type": "record",
-            "description": "Defines a Flock community with metadata, privacy rules, and optional access costs. Sensitive fields may be encrypted and managed by the AppView.",
+            "description": "Defines a Flock community.",
             "key": "cid",
             "record": {
                 "type": "object",
