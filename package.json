@@ -1,5 +1,5 @@
 {
-    "name": "flox-protocol",
+    "name": "flox-proto",
     "description": "Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.",
     "type": "module",
     "version": "0.0.1",
