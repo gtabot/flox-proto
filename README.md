@@ -1,10 +1,10 @@
-# Flokx Protocol
+# Flok Protocol
 
 Protocol definitions for encrypted communities on the AT Protocol.
 
 ## Overview
 
-Flokx enables the creation and management of private, encrypted communities (Floks) on Bluesky. Each Flok supports:
+Flok enables the creation and management of private, encrypted communities (Floks) on Bluesky. Each Flok supports:
 
 - End-to-end encrypted content
 - Points-based permissions
@@ -22,8 +22,8 @@ Flokx enables the creation and management of private, encrypted communities (Flo
 
 ```bash
 # Clone repository
-git clone https://github.com/gtabot/flokx-proto.git
-cd flokx-proto
+git clone https://github.com/gtabot/flok-proto.git
+cd flok-proto
 
 # Install dependencies
 npm install
@@ -48,7 +48,7 @@ src/
 
 ## Contact
 
-- Email: <gregg@flokx.social>
+- Email: <gregg@flox.social>
 - GitHub: [@gtabot](https://github.com/gtabot)
 
 Built on the [AT Protocol](https://atproto.com/)
