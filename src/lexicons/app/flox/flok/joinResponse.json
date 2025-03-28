@@ -1,0 +1,60 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.join.response",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "State record for join response in Flok PDS.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "responseId",
+                    "requestId",
+                    "flokId",
+                    "status",
+                    "createdAt"
+                ],
+                "properties": {
+                    "responseId": {
+                        "type": "string",
+                        "description": "Unique identifier for the response"
+                    },
+                    "requestId": {
+                        "type": "string",
+                        "description": "ID of the original request"
+                    },
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok being responded about"
+                    },
+                    "responderId": {
+                        "type": "string",
+                        "description": "DID of admin who responded (if manual)"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Final status of the response",
+                        "enum": [
+                            "approved",
+                            "denied",
+                            "queued"
+                        ]
+                    },
+                    "reason": {
+                        "type": "string",
+                        "description": "Optional reason for decision"
+                    },
+                    "automatic": {
+                        "type": "boolean",
+                        "description": "Whether this was an automatic response"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}

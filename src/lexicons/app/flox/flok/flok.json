@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.flok.create",
+    "id": "app.flox.flok.flok",
     "defs": {
         "main": {
             "type": "record",
@@ -29,13 +29,22 @@
                         "type": "string",
                         "description": "Optional description"
                     },
-                    "private": {
-                        "type": "boolean",
-                        "description": "Whether the Flok is private"
+                    "visibility": {
+                        "type": "string",
+                        "description": "Whether the Flok is public or private",
+                        "enum": [
+                            "public",
+                            "private"
+                        ]
                     },
-                    "inviteOnly": {
-                        "type": "boolean",
-                        "description": "Whether joins require invites"
+                    "joinType": {
+                        "type": "string",
+                        "description": "How new members can join the Flok",
+                        "enum": [
+                            "open",
+                            "request",
+                            "invite"
+                        ]
                     },
                     "creatorId": {
                         "type": "string",

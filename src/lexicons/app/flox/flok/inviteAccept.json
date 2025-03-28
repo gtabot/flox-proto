@@ -1,35 +1,36 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.flok.join.request",
+    "id": "app.flox.flok.invite.accept",
     "defs": {
         "main": {
             "type": "record",
-            "description": "A request to join a Flok.",
+            "description": "Record for accepting an invitation to join a Flok.",
             "key": "tid",
             "record": {
                 "type": "object",
                 "required": [
-                    "joinRequestId",
+                    "inviteId",
                     "flokId",
-                    "requesterId",
+                    "invitedId",
                     "createdAt"
                 ],
                 "properties": {
-                    "joinRequestId": {
+                    "inviteId": {
                         "type": "string",
-                        "description": "Unique identifier for the join request"
+                        "description": "ID of the invite being accepted"
                     },
                     "flokId": {
                         "type": "string",
-                        "description": "Unique identifier for the Flok"
+                        "description": "The Flok being joined"
                     },
-                    "requesterId": {
+                    "invitedId": {
                         "type": "string",
-                        "description": "Unique identifier for the requester"
+                        "description": "DID of the user accepting the invite"
                     },
                     "createdAt": {
                         "type": "string",
-                        "format": "datetime"
+                        "format": "datetime",
+                        "description": "Timestamp when this acceptance was created"
                     }
                 }
             }

@@ -1,0 +1,60 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.join.request",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "State record for join request in Flok PDS.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "requestId",
+                    "flokId",
+                    "requesterId",
+                    "status",
+                    "createdAt"
+                ],
+                "properties": {
+                    "requestId": {
+                        "type": "string",
+                        "description": "Unique identifier for the request"
+                    },
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok being requested to join"
+                    },
+                    "requesterId": {
+                        "type": "string",
+                        "description": "DID of the requester"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Current status of the request",
+                        "enum": [
+                            "pending",
+                            "queued",
+                            "approved",
+                            "denied",
+                            "expired",
+                            "cancelled"
+                        ]
+                    },
+                    "queuePosition": {
+                        "type": "integer",
+                        "description": "Position in queue if status is queued"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "When the request was updated"
+                    }
+                }
+            }
+        }
+    }
+}

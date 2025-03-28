@@ -1,10 +1,10 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.feed.post",
+    "id": "app.flox.feed.post",
     "defs": {
         "main": {
             "type": "record",
-            "description": "Record containing a Flokx post with encrypted content.",
+            "description": "Record containing a Flok post with encrypted content.",
             "key": "tid",
             "record": {
                 "type": "object",

@@ -1,0 +1,51 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.member",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Record representing membership in a Flok.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flokId",
+                    "memberId",
+                    "joinedAt",
+                    "role"
+                ],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "The unique identifier for the Flok."
+                    },
+                    "memberId": {
+                        "type": "string",
+                        "description": "DID of the member."
+                    },
+                    "joinedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Timestamp when the user joined."
+                    },
+                    "role": {
+                        "type": "ref",
+                        "ref": "#memberRole"
+                    },
+                    "invitedBy": {
+                        "type": "string",
+                        "description": "DID of the user who invited this member (if joined via invite)."
+                    }
+                }
+            }
+        },
+        "memberRole": {
+            "type": "string",
+            "enum": [
+                "admin",
+                "moderator",
+                "member"
+            ]
+        }
+    }
+}

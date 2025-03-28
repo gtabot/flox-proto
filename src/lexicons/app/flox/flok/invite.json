@@ -1,0 +1,59 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.invite",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Record for invitation in Flok PDS.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "inviteId",
+                    "flokId",
+                    "inviterId",
+                    "invitedId",
+                    "status",
+                    "createdAt",
+                    "expiresAt"
+                ],
+                "properties": {
+                    "inviteId": {
+                        "type": "string",
+                        "description": "Unique identifier for the invite"
+                    },
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok being invited to"
+                    },
+                    "inviterId": {
+                        "type": "string",
+                        "description": "DID of the inviter"
+                    },
+                    "invitedId": {
+                        "type": "string",
+                        "description": "DID of the invited"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Current status of the invite",
+                        "enum": [
+                            "pending",
+                            "accepted",
+                            "expired",
+                            "rescinded"
+                        ]
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    },
+                    "expiresAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+}
