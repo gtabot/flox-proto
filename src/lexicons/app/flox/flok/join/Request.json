@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.join.Request",
+    "id": "app.flokx.flok.join.Request",
     "defs": {
         "main": {
             "type": "record",

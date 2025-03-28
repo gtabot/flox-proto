@@ -1,15 +1,15 @@
 {
-    "name": "flox-proto",
-    "description": "Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.",
+    "name": "flokx-proto",
+    "description": "Backend protocol definitions for Flokx — invite-only encrypted communities on the AT Protocol.",
     "type": "module",
     "version": "0.0.1",
-    "author": "Gregg Tabot <gregg@flox.social>",
+    "author": "Gregg Tabot <gregg@flokx.social>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/gtabot/flox-proto.git"
+        "url": "https://github.com/gtabot/flokx-proto.git"
     },
     "keywords": [
-        "flox",
+        "flokx",
         "bluesky",
         "atproto",
         "encrypted communities",

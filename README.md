@@ -1,10 +1,10 @@
-# Flox Protocol
+# Flokx Protocol
 
-Backend protocol definitions for Flox — invite-only encrypted communities on the AT Protocol.
+Backend protocol definitions for Flokx — invite-only encrypted communities on the AT Protocol.
 
 ## Overview
 
-Flox Protocol enables the creation and management of private, encrypted communities (called "Floks") on the AT Protocol/Bluesky network. It provides a secure and controlled environment for group interactions while leveraging the decentralized nature of the AT Protocol.
+Flokx Protocol enables the creation and management of private, encrypted communities (called "Floks") on the AT Protocol/Bluesky network. It provides a secure and controlled environment for group interactions while leveraging the decentralized nature of the AT Protocol.
 
 ## Features
 
@@ -17,7 +17,7 @@ Flox Protocol enables the creation and management of private, encrypted communit
 ## Installation
 
 ```bash
-npm install flox-protocol
+npm install flokx-protocol
 ```
 
 ## Development
@@ -32,8 +32,8 @@ npm install flox-protocol
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/gtabot/flox-protocol.git
-cd flox-protocol
+git clone https://github.com/gtabot/flokx-protocol.git
+cd flokx-protocol
 ```
 
 2. Install dependencies:
@@ -65,7 +65,7 @@ If you discover any security issues, please create an GitHub Issue
 ## Contact
 
 - Author: Gregg Tabot
-- Email: <gregg@flox.social>
+- Email: <gregg@flokx.social>
 - GitHub: [@gtabot](https://github.com/gtabot)
 
 ## Acknowledgments
