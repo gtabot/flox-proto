@@ -1,73 +1,54 @@
 # Flokx Protocol
 
-Backend protocol definitions for Flokx — invite-only encrypted communities on the AT Protocol.
+Protocol definitions for encrypted communities on the AT Protocol.
 
 ## Overview
 
-Flokx Protocol enables the creation and management of private, encrypted communities (called "Floks") on the AT Protocol/Bluesky network. It provides a secure and controlled environment for group interactions while leveraging the decentralized nature of the AT Protocol.
+Flokx enables the creation and management of private, encrypted communities (Floks) on Bluesky. Each Flok supports:
 
-## Features
+- End-to-end encrypted content
+- Points-based permissions
+- Invite-only or open membership
+- Customizable thresholds for actions
 
-- **Encrypted Communities**: Create and manage private, encrypted group spaces
-- **Invite-Only Access**: Control membership through an invitation system
-- **Role-Based Permissions**: Support for admin and member roles
-- **Secure Communication**: End-to-end encrypted content sharing
-- **AT Protocol Integration**: Built on and compatible with Bluesky's AT Protocol
-
-## Installation
-
-```bash
-npm install flokx-protocol
-```
-
-## Development
+## Development Setup
 
 ### Prerequisites
 
-- Node.js >= 18
-- npm or pnpm
+- Node.js >= 18.0.0
+- npm
 
-### Setup
-
-1. Clone the repository:
+### Quick Start
 
 ```bash
-git clone https://github.com/gtabot/flokx-protocol.git
-cd flokx-protocol
-```
+# Clone repository
+git clone https://github.com/gtabot/flokx-proto.git
+cd flokx-proto
 
-2. Install dependencies:
-
-```bash
+# Install dependencies
 npm install
-```
 
-3. Build the project:
-
-```bash
+# Build project
 npm run build
+
+# Validate lexicons
+npm run validate
 ```
 
-### Scripts
+### Project Structure
 
-- `npm run build` - Build the TypeScript code
-- `npm run update` - Update dependencies
-- `npm run validate` - Validate lexicon definitions
-
-## Contributing
-
-Contributions are welcome!
-
-## Security
-
-If you discover any security issues, please create an GitHub Issue
+```txt
+src/
+├── lexicons/           # AT Protocol lexicon definitions
+│   └── app/
+│       └── flox/      # Core Flok operations
+├── encrypted_schemas/  # Typescript interfaces for encrypted data
+└── scripts/           # Development utilities
+```
 
 ## Contact
 
-- Author: Gregg Tabot
 - Email: <gregg@flokx.social>
 - GitHub: [@gtabot](https://github.com/gtabot)
 
-## Acknowledgments
-
-Built on the [AT Protocol](https://atproto.com/) by [Bluesky](https://bsky.social/)
+Built on the [AT Protocol](https://atproto.com/)

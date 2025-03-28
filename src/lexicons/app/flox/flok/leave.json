@@ -1,31 +1,26 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.flok.createFlok",
+    "id": "app.flokx.flok.leave",
     "defs": {
         "main": {
             "type": "record",
-            "description": "Creates a new Flok community",
+            "description": "Record for leaving a Flok.",
             "key": "tid",
             "record": {
                 "type": "object",
                 "required": [
-                    "flokRef",
-                    "token",
-                    "content",
+                    "flokId",
+                    "leaverId",
                     "createdAt"
                 ],
                 "properties": {
-                    "flokRef": {
+                    "flokId": {
                         "type": "string",
-                        "description": "Reference to the new Flok"
+                        "description": "Unique identifier for the Flok being left"
                     },
-                    "token": {
+                    "leaverId": {
                         "type": "string",
-                        "description": "Validation token"
-                    },
-                    "content": {
-                        "type": "string",
-                        "description": "Base64-encoded string containing the encrypted content"
+                        "description": "Unique identifier for the leaver"
                     },
                     "createdAt": {
                         "type": "string",

@@ -1,0 +1,165 @@
+{
+    "lexicon": 1,
+    "id": "app.flokx.flok.create",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Creates a new Flok community",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flokId",
+                    "name",
+                    "private",
+                    "inviteOnly",
+                    "creatorId",
+                    "createdAt"
+                ],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "Unique identifier for the new Flok"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Display name of the Flok"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Optional description"
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "description": "Whether the Flok is private"
+                    },
+                    "inviteOnly": {
+                        "type": "boolean",
+                        "description": "Whether joins require invites"
+                    },
+                    "creatorId": {
+                        "type": "string",
+                        "description": "DID of the Flok creator"
+                    },
+                    "maxMembers": {
+                        "type": "integer",
+                        "description": "Optional member cap"
+                    },
+                    "points": {
+                        "type": "object",
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "description": "Whether points are enabled"
+                            },
+                            "plusEmojis": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Emojis that add points"
+                            },
+                            "minusEmojis": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Emojis that subtract points"
+                            },
+                            "drain": {
+                                "type": "object",
+                                "properties": {
+                                    "enabled": {
+                                        "type": "boolean",
+                                        "description": "Whether draining is enabled"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "linear",
+                                            "exponential"
+                                        ],
+                                        "description": "How the points are drained"
+                                    },
+                                    "factor": {
+                                        "type": "number",
+                                        "description": "The factor of the drain"
+                                    },
+                                    "frequency": {
+                                        "type": "string",
+                                        "enum": [
+                                            "daily",
+                                            "weekly",
+                                            "monthly"
+                                        ],
+                                        "description": "How often the points are drained"
+                                    }
+                                }
+                            },
+                            "forgiveness": {
+                                "type": "object",
+                                "properties": {
+                                    "enabled": {
+                                        "type": "boolean",
+                                        "description": "Whether forgiveness is enabled"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "linear",
+                                            "exponential"
+                                        ],
+                                        "description": "How the points are forgiven"
+                                    },
+                                    "factor": {
+                                        "type": "number",
+                                        "description": "The factor of the forgiveness"
+                                    },
+                                    "frequency": {
+                                        "type": "string",
+                                        "enum": [
+                                            "daily",
+                                            "weekly",
+                                            "monthly"
+                                        ],
+                                        "description": "How often the points are forgiven"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "thresholds": {
+                        "type": "object",
+                        "properties": {
+                            "canPost": {
+                                "type": "integer",
+                                "description": "How many points are required to post"
+                            },
+                            "canComment": {
+                                "type": "integer",
+                                "description": "How many points are required to comment"
+                            },
+                            "canReact": {
+                                "type": "integer",
+                                "description": "How many points are required to react"
+                            },
+                            "canInvite": {
+                                "type": "integer",
+                                "description": "How many points are required to invite"
+                            },
+                            "mustLeave": {
+                                "type": "integer",
+                                "description": "How many points are required to leave"
+                            }
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Time the Flok was created"
+                    }
+                }
+            }
+        }
+    }
+}

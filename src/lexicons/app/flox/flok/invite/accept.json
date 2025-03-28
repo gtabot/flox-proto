@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.flok.acceptInvite",
+    "id": "app.flokx.flok.invite.accept",
     "defs": {
         "main": {
             "type": "record",
@@ -9,13 +9,13 @@
             "record": {
                 "type": "object",
                 "required": [
-                    "content",
+                    "encryptedInvite",
                     "createdAt"
                 ],
                 "properties": {
-                    "content": {
+                    "encryptedInvite": {
                         "type": "string",
-                        "description": "Base64-encoded string containing the encrypted content."
+                        "description": "Base64-encoded string containing the encrypted invite."
                     },
                     "createdAt": {
                         "type": "string",

@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.flok.join.Request",
+    "id": "app.flokx.flok.join.request",
     "defs": {
         "main": {
             "type": "record",
@@ -9,9 +9,9 @@
             "record": {
                 "type": "object",
                 "required": [
-                    "flokRef",
-                    "token",
-                    "content",
+                    "joinRequestId",
+                    "flokId",
+                    "requesterId",
                     "createdAt"
                 ],
                 "properties": {
@@ -19,17 +19,13 @@
                         "type": "string",
                         "description": "Unique identifier for the join request"
                     },
-                    "flokRef": {
+                    "flokId": {
                         "type": "string",
-                        "description": "Reference to the Flok being requested to join"
+                        "description": "Unique identifier for the Flok"
                     },
-                    "token": {
+                    "requesterId": {
                         "type": "string",
-                        "description": "Validation token"
-                    },
-                    "content": {
-                        "type": "string",
-                        "description": "Base64-encoded string containing the encrypted content"
+                        "description": "Unique identifier for the requester"
                     },
                     "createdAt": {
                         "type": "string",

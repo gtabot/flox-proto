@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flokx.feed.Post",
+    "id": "app.flokx.feed.post",
     "defs": {
         "main": {
             "type": "record",
@@ -11,7 +11,7 @@
                 "required": [
                     "flokRef",
                     "token",
-                    "content",
+                    "encryptedContent",
                     "createdAt"
                 ],
                 "properties": {
@@ -23,9 +23,9 @@
                         "type": "string",
                         "description": "A unique token used for validating references."
                     },
-                    "content": {
+                    "encryptedContent": {
                         "type": "string",
-                        "description": "Base64-encoded string containing the encrypted content."
+                        "description": "Base64-encoded string containing the encrypted data."
                     },
                     "createdAt": {
                         "type": "string",
