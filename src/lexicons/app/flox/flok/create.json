@@ -82,7 +82,7 @@
                                         "description": "How the points are drained"
                                     },
                                     "factor": {
-                                        "type": "number",
+                                        "type": "float",
                                         "description": "The factor of the drain"
                                     },
                                     "frequency": {
@@ -112,7 +112,7 @@
                                         "description": "How the points are forgiven"
                                     },
                                     "factor": {
-                                        "type": "number",
+                                        "type": "float",
                                         "description": "The factor of the forgiveness"
                                     },
                                     "frequency": {

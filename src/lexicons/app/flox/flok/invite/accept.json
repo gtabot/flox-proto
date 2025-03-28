@@ -10,7 +10,8 @@
                 "type": "object",
                 "required": [
                     "encryptedInvite",
-                    "createdAt"
+                    "createdAt",
+                    "expiresAt"
                 ],
                 "properties": {
                     "encryptedInvite": {
@@ -21,6 +22,11 @@
                         "type": "string",
                         "format": "datetime",
                         "description": "Timestamp when this acceptance was created."
+                    },
+                    "expiresAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Timestamp when this invitation expires."
                     }
                 }
             }

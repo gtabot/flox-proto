@@ -9,8 +9,12 @@
             "record": {
                 "type": "object",
                 "required": [
-                    "invite",
-                    "createdAt"
+                    "flokId",
+                    "inviteId",
+                    "inviterId",
+                    "inviteeId",
+                    "createdAt",
+                    "expiresAt"
                 ],
                 "properties": {
                     "flokId": {
@@ -33,6 +37,11 @@
                         "type": "string",
                         "format": "datetime",
                         "description": "Timestamp when this acceptance was created."
+                    },
+                    "expiresAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Timestamp when this invitation expires."
                     }
                 }
             }

@@ -21,7 +21,7 @@
     "scripts": {
         "build": "tsc",
         "update": "ncu -u && npm install",
-        "validate": "ts-node scripts/validate-lexicons.ts"
+        "validate": "node --loader ts-node/esm scripts/validate-lexicons.ts"
     },
     "devDependencies": {
         "@atproto/api": "^0.14.13",

@@ -81,8 +81,9 @@ function getLexiconFiles(dir: string): string[] {
     return files
 }
 
+
 const lexicons = new Lexicons()
-const lexiconDir = path.join(__dirname, '..', 'lexicons')
+const lexiconDir = path.join(__dirname, '..', 'src', 'lexicons')
 const files = getLexiconFiles(lexiconDir)
 let hasError = false
 

@@ -9,8 +9,7 @@
             "record": {
                 "type": "object",
                 "required": [
-                    "inviteId",
-                    "invite",
+                    "encryptedInvite",
                     "createdAt",
                     "expiresAt"
                 ],
@@ -23,6 +22,11 @@
                         "type": "string",
                         "format": "datetime",
                         "description": "Timestamp when this invitation was created."
+                    },
+                    "expiresAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Timestamp when this invitation expires."
                     }
                 }
             }
