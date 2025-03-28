@@ -11,9 +11,7 @@
                 "required": [
                     "flokId",
                     "name",
-                    "private",
-                    "inviteOnly",
-                    "creatorId",
+                    "joinType",
                     "createdAt"
                 ],
                 "properties": {
@@ -29,22 +27,18 @@
                         "type": "string",
                         "description": "Optional description"
                     },
-                    "visibility": {
-                        "type": "string",
-                        "description": "Whether the Flok is public or private",
-                        "enum": [
-                            "public",
-                            "private"
-                        ]
-                    },
                     "joinType": {
                         "type": "string",
                         "description": "How new members can join the Flok",
                         "enum": [
                             "open",
                             "request",
-                            "invite"
+                            "closed"
                         ]
+                    },
+                    "invitesAllowed": {
+                        "type": "integer",
+                        "description": "Number of invites allowed per member"
                     },
                     "creatorId": {
                         "type": "string",
@@ -166,6 +160,11 @@
                         "type": "string",
                         "format": "datetime",
                         "description": "Time the Flok was created"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "Time the Flok was last updated"
                     }
                 }
             }
