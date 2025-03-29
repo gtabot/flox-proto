@@ -1,10 +1,10 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.leave",
+    "id": "app.flox.flok.deleteFlok",
     "defs": {
         "main": {
             "type": "procedure",
-            "description": "Leave a Flok.",
+            "description": "Delete a Flok community. Flok is identified by session.",
             "input": {
                 "encoding": "application/json",
                 "schema": {
@@ -22,10 +22,11 @@
                     "properties": {
                         "status": {
                             "type": "string",
-                            "description": "Status of the operation",
+                            "description": "Status of deletion",
                             "enum": [
-                                "success",
-                                "failure"
+                                "deleted",
+                                "notFound",
+                                "unauthorized"
                             ]
                         }
                     }

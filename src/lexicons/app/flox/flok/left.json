@@ -1,0 +1,33 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.left",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Record for a user who has left a Flok, stored in Flok PDS.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flokId",
+                    "leaverId",
+                    "createdAt"
+                ],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok being left"
+                    },
+                    "leaverId": {
+                        "type": "string",
+                        "description": "DID of the user who left"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "datetime"
+                    }
+                }
+            }
+        }
+    }
+} 

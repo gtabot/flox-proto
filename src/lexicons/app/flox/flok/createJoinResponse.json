@@ -1,0 +1,54 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.createJoinResponse",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Respond to a join request. Flok is identified by session.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "requestId",
+                        "status"
+                    ],
+                    "properties": {
+                        "requestId": {
+                            "type": "string",
+                            "description": "The request to respond to"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Decision on the request",
+                            "enum": [
+                                "approved",
+                                "denied",
+                                "queued"
+                            ]
+                        },
+                        "reason": {
+                            "type": "string",
+                            "description": "Optional reason for the decision"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "responseId"
+                    ],
+                    "properties": {
+                        "responseId": {
+                            "type": "string",
+                            "description": "ID of the response record"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

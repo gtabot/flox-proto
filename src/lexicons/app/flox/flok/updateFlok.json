@@ -1,0 +1,170 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.updateFlok",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Update settings for a Flok community.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "New display name"
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "New description"
+                        },
+                        "joinType": {
+                            "type": "string",
+                            "description": "New join type",
+                            "enum": [
+                                "open",
+                                "request",
+                                "closed"
+                            ]
+                        },
+                        "invitesAllowed": {
+                            "type": "integer",
+                            "description": "New number of invites per member"
+                        },
+                        "maxMembers": {
+                            "type": "integer",
+                            "description": "New member cap"
+                        },
+                        "points": {
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean",
+                                    "description": "Whether points are enabled"
+                                },
+                                "plusEmojis": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Emojis that add points"
+                                },
+                                "minusEmojis": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Emojis that subtract points"
+                                },
+                                "drain": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean",
+                                            "description": "Whether draining is enabled"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "enum": [
+                                                "linear",
+                                                "exponential"
+                                            ],
+                                            "description": "How the points are drained"
+                                        },
+                                        "factor": {
+                                            "type": "float",
+                                            "description": "The factor of the drain"
+                                        },
+                                        "frequency": {
+                                            "type": "string",
+                                            "enum": [
+                                                "daily",
+                                                "weekly",
+                                                "monthly"
+                                            ],
+                                            "description": "How often the points are drained"
+                                        }
+                                    }
+                                },
+                                "forgiveness": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean",
+                                            "description": "Whether forgiveness is enabled"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "enum": [
+                                                "linear",
+                                                "exponential"
+                                            ],
+                                            "description": "How the points are forgiven"
+                                        },
+                                        "factor": {
+                                            "type": "float",
+                                            "description": "The factor of the forgiveness"
+                                        },
+                                        "frequency": {
+                                            "type": "string",
+                                            "enum": [
+                                                "daily",
+                                                "weekly",
+                                                "monthly"
+                                            ],
+                                            "description": "How often the points are forgiven"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "thresholds": {
+                            "type": "object",
+                            "properties": {
+                                "canPost": {
+                                    "type": "integer",
+                                    "description": "How many points are required to post"
+                                },
+                                "canComment": {
+                                    "type": "integer",
+                                    "description": "How many points are required to comment"
+                                },
+                                "canReact": {
+                                    "type": "integer",
+                                    "description": "How many points are required to react"
+                                },
+                                "canInvite": {
+                                    "type": "integer",
+                                    "description": "How many points are required to invite"
+                                },
+                                "mustLeave": {
+                                    "type": "integer",
+                                    "description": "How many points are required to leave"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "status"
+                    ],
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "description": "Status of the operation",
+                            "enum": [
+                                "success",
+                                "failure"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

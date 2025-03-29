@@ -1,0 +1,80 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.listInvites",
+    "defs": {
+        "main": {
+            "type": "query",
+            "description": "List invites for a Flok.",
+            "parameters": {
+                "type": "params",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "Filter by status",
+                        "enum": ["pending", "accepted", "rescinded", "expired"]
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "default": 50,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "Number of invites to return"
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "Pagination cursor"
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": ["invites"],
+                    "properties": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "Next pagination cursor"
+                        },
+                        "invites": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": ["inviteId", "inviterId", "invitedId", "createdAt", "status"],
+                                "properties": {
+                                    "inviteId": {
+                                        "type": "string",
+                                        "description": "ID of the invite"
+                                    },
+                                    "inviterId": {
+                                        "type": "string",
+                                        "description": "DID of the inviting member"
+                                    },
+                                    "invitedId": {
+                                        "type": "string",
+                                        "description": "DID of the invited user"
+                                    },
+                                    "createdAt": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "When the invite was created"
+                                    },
+                                    "expiresAt": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "When the invite expires"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Status of the invite",
+                                        "enum": ["pending", "accepted", "rescinded", "expired"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

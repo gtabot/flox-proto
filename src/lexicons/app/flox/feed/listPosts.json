@@ -1,0 +1,77 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.feed.listPosts",
+    "defs": {
+        "main": {
+            "type": "query",
+            "description": "List posts in a Flok. Returns decrypted content for authorized requests. Flok is identified by session.",
+            "parameters": {
+                "type": "params",
+                "properties": {
+                    "limit": {
+                        "type": "integer",
+                        "default": 50,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "Number of posts to return"
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "Pagination cursor"
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "posts"
+                    ],
+                    "properties": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "Next pagination cursor"
+                        },
+                        "posts": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "uri",
+                                    "cid",
+                                    "authorId",
+                                    "createdAt",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "uri": {
+                                        "type": "string",
+                                        "description": "AT URI of the post"
+                                    },
+                                    "cid": {
+                                        "type": "string",
+                                        "description": "CID of the post content"
+                                    },
+                                    "authorId": {
+                                        "type": "string",
+                                        "description": "DID of the post author"
+                                    },
+                                    "createdAt": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "When the post was created"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "description": "Decrypted post content"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.discovery.listDiscoverable",
+    "defs": {
+        "main": {
+            "type": "query",
+            "description": "List discoverable Floks across PDSs.",
+            "parameters": {
+                "type": "params",
+                "properties": {
+                    "limit": {
+                        "type": "integer",
+                        "default": 50,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "Number of Floks to return"
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "Pagination cursor"
+                    },
+                    "query": {
+                        "type": "string",
+                        "description": "Optional search query"
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "floks"
+                    ],
+                    "properties": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "Next pagination cursor"
+                        },
+                        "floks": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "discoveryRef",
+                                    "name",
+                                    "memberCount",
+                                    "joinType"
+                                ],
+                                "properties": {
+                                    "discoveryRef": {
+                                        "type": "string",
+                                        "description": "Public reference for discovering this Flok"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Display name of the Flok"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the Flok"
+                                    },
+                                    "memberCount": {
+                                        "type": "integer",
+                                        "description": "Current number of members"
+                                    },
+                                    "joinType": {
+                                        "type": "string",
+                                        "enum": [
+                                            "open",
+                                            "request",
+                                            "closed"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

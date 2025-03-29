@@ -1,0 +1,47 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.joined",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "A record of a user joining a Flok.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flokId",
+                    "memberId",
+                    "joinedAt"
+                ],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok that was joined"
+                    },
+                    "memberId": {
+                        "type": "string",
+                        "description": "DID of the joining member"
+                    },
+                    "joinedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "When the member joined"
+                    },
+                    "joinType": {
+                        "type": "string",
+                        "description": "How the user joined",
+                        "enum": [
+                            "request",
+                            "invite",
+                            "open"
+                        ]
+                    },
+                    "joinCode": {
+                        "type": "string",
+                        "description": "The join code used, if applicable"
+                    }
+                }
+            }
+        }
+    }
+}

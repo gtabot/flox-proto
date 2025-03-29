@@ -1,0 +1,33 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.memberKeys",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Encrypted Flok key for a member.",
+            "key": "cid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "flokId",
+                    "memberId",
+                    "encryptedFlokKey"
+                ],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok this key is for"
+                    },
+                    "memberId": {
+                        "type": "string",
+                        "description": "DID of the member"
+                    },
+                    "encryptedFlokKey": {
+                        "type": "string",
+                        "description": "Flok's encryption key, encrypted with the member's public key"
+                    }
+                }
+            }
+        }
+    }
+}

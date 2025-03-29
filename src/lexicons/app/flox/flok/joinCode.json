@@ -1,31 +1,31 @@
 {
     "lexicon": 1,
-    "id": "app.flox.feed.post",
+    "id": "app.flox.flok.joinCode",
     "defs": {
         "main": {
             "type": "record",
-            "description": "Record containing a Flok post with encrypted content.",
+            "description": "Current join code for a Flok.",
             "key": "tid",
             "record": {
                 "type": "object",
                 "required": [
-                    "flokRef",
-                    "encryptedContent",
+                    "joinCode",
+                    "flokId",
                     "createdAt"
                 ],
                 "properties": {
-                    "flokRef": {
+                    "joinCode": {
                         "type": "string",
-                        "description": "A reference used to identify the Flok."
+                        "description": "Current code required to join the Flok"
                     },
-                    "encryptedContent": {
+                    "flokId": {
                         "type": "string",
-                        "description": "Base64-encoded string containing the encrypted data."
+                        "description": "The Flok this join code is for"
                     },
                     "createdAt": {
                         "type": "string",
                         "format": "datetime",
-                        "description": "Client-declared timestamp when this post was created."
+                        "description": "When this join code was created"
                     }
                 }
             }

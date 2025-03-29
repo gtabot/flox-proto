@@ -1,15 +1,33 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.leave",
+    "id": "app.flox.flok.updateMemberRole",
     "defs": {
         "main": {
             "type": "procedure",
-            "description": "Leave a Flok.",
+            "description": "Update a member's role in a Flok.",
             "input": {
                 "encoding": "application/json",
                 "schema": {
                     "type": "object",
-                    "properties": {}
+                    "required": [
+                        "memberId",
+                        "role"
+                    ],
+                    "properties": {
+                        "memberId": {
+                            "type": "string",
+                            "description": "DID of the member"
+                        },
+                        "role": {
+                            "type": "string",
+                            "description": "New role for the member",
+                            "enum": [
+                                "member",
+                                "moderator",
+                                "admin"
+                            ]
+                        }
+                    }
                 }
             },
             "output": {

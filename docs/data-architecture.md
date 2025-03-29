@@ -18,10 +18,33 @@ Flok uses a hybrid architecture combining user-owned repository records with cen
 | `app.flox.flok.join.request` | ✓ |  | Join request state and queue management |
 | `app.flox.flok.join.response` | ✓ |  | Join response state and processing |
 | `app.flox.flok.leave` | ✓ |  | Record of user leaving a Flok |
+| `app.flox.flok.memberKeys` | ✓ |  | Encrypted Flok key for each member |
 
 ## Service Data (Flok PDS)
 
 Data stored centrally in the Flok PDS. This includes private data and operational state needed for the service.
+
+### Private Tables
+
+Some sensitive data is stored in private tables rather than as records:
+
+#### Master Keys
+
+- Flok encryption keys
+- Never exposed through API
+- Used server-side only
+
+#### Session Management
+
+- Active member sessions
+- Authentication tokens
+- Expiration tracking
+
+#### Reference Mapping
+
+- Secure flokRef to flokId mapping
+- Used for post attribution
+- Never exposed through API
 
 ### Flok Records
 

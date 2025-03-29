@@ -1,0 +1,29 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.discovery.discovery",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "Public discovery record for a Flok.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": [
+                    "joinCode",
+                    "updatedAt"
+                ],
+                "properties": {
+                    "joinCode": {
+                        "type": "string",
+                        "description": "The code required to join the Flok"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "When this discovery record was last updated"
+                    }
+                }
+            }
+        }
+    }
+}

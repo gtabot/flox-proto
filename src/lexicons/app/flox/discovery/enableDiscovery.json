@@ -1,15 +1,23 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.leave",
+    "id": "app.flox.discovery.enableDiscovery",
     "defs": {
         "main": {
             "type": "procedure",
-            "description": "Leave a Flok.",
+            "description": "Enable or disable discovery for a Flok. Flok is identified by session.",
             "input": {
                 "encoding": "application/json",
                 "schema": {
                     "type": "object",
-                    "properties": {}
+                    "required": [
+                        "enabled"
+                    ],
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "Whether discovery should be enabled"
+                        }
+                    }
                 }
             },
             "output": {

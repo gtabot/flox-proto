@@ -1,15 +1,23 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.leave",
+    "id": "app.flox.feed.deletePost",
     "defs": {
         "main": {
             "type": "procedure",
-            "description": "Leave a Flok.",
+            "description": "Delete a post from a Flok.",
             "input": {
                 "encoding": "application/json",
                 "schema": {
                     "type": "object",
-                    "properties": {}
+                    "required": [
+                        "uri"
+                    ],
+                    "properties": {
+                        "uri": {
+                            "type": "string",
+                            "description": "AT URI of the post to delete"
+                        }
+                    }
                 }
             },
             "output": {
@@ -17,15 +25,19 @@
                 "schema": {
                     "type": "object",
                     "required": [
+                        "uri",
                         "status"
                     ],
                     "properties": {
+                        "uri": {
+                            "type": "string",
+                            "description": "AT URI of the deleted post"
+                        },
                         "status": {
                             "type": "string",
-                            "description": "Status of the operation",
+                            "description": "Status of the deletion",
                             "enum": [
-                                "success",
-                                "failure"
+                                "deleted"
                             ]
                         }
                     }

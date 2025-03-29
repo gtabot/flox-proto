@@ -1,0 +1,41 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.rescindInvite",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Rescind an invitation to join a Flok.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": ["inviteId"],
+                    "properties": {
+                        "inviteId": {
+                            "type": "string",
+                            "description": "The invite to rescind"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": ["inviteId", "status"],
+                    "properties": {
+                        "inviteId": {
+                            "type": "string",
+                            "description": "ID of the rescinded invite"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "New status of the invite",
+                            "enum": ["rescinded"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

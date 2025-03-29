@@ -1,15 +1,14 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.join.request",
+    "id": "app.flox.flok.joinRequest",
     "defs": {
         "main": {
             "type": "record",
             "description": "State record for join request in Flok PDS.",
-            "key": "tid",
+            "key": "requestId",
             "record": {
                 "type": "object",
                 "required": [
-                    "requestId",
                     "flokId",
                     "requesterId",
                     "status",

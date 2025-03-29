@@ -1,0 +1,55 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.createJoinRequest",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Request to join a Flok.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "joinCode"
+                    ],
+                    "properties": {
+                        "joinCode": {
+                            "type": "string",
+                            "description": "The code required to join the Flok"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "requestId",
+                        "status"
+                    ],
+                    "properties": {
+                        "requestId": {
+                            "type": "string",
+                            "description": "ID of the join request"
+                        },
+                        "status": {
+                            "type": "string",
+                            "description": "Initial status of the request",
+                            "enum": [
+                                "pending",
+                                "queued",
+                                "approved",
+                                "denied"
+                            ]
+                        },
+                        "queuePosition": {
+                            "type": "integer",
+                            "description": "Position in queue if status is queued"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

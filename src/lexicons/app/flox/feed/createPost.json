@@ -1,0 +1,45 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.feed.createPost",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Create a new encrypted post in a Flok. Flok is identified by session.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "content"
+                    ],
+                    "properties": {
+                        "content": {
+                            "type": "string",
+                            "description": "Post content to be encrypted"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "uri",
+                        "cid"
+                    ],
+                    "properties": {
+                        "uri": {
+                            "type": "string",
+                            "description": "AT URI of the created post"
+                        },
+                        "cid": {
+                            "type": "string",
+                            "description": "CID of the post content"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.createInvite",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Create an invitation to join a Flok.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "invitedId"
+                    ],
+                    "properties": {
+                        "invitedId": {
+                            "type": "string",
+                            "description": "DID of the user to invite"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "inviteId",
+                        "expiresAt"
+                    ],
+                    "properties": {
+                        "inviteId": {
+                            "type": "string",
+                            "description": "ID of the created invite"
+                        },
+                        "expiresAt": {
+                            "type": "string",
+                            "format": "datetime",
+                            "description": "When this invite expires"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

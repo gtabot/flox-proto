@@ -1,0 +1,67 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.listMembers",
+    "defs": {
+        "main": {
+            "type": "query",
+            "description": "List members of a Flok.",
+            "parameters": {
+                "type": "params",
+                "properties": {
+                    "role": {
+                        "type": "string",
+                        "description": "Filter by role",
+                        "enum": ["member", "moderator", "admin"]
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "default": 50,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "description": "Number of members to return"
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "Pagination cursor"
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": ["members"],
+                    "properties": {
+                        "cursor": {
+                            "type": "string",
+                            "description": "Next pagination cursor"
+                        },
+                        "members": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": ["memberId", "role", "joinedAt"],
+                                "properties": {
+                                    "memberId": {
+                                        "type": "string",
+                                        "description": "DID of the member"
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "Role in the Flok",
+                                        "enum": ["member", "moderator", "admin"]
+                                    },
+                                    "joinedAt": {
+                                        "type": "string",
+                                        "format": "datetime",
+                                        "description": "When they joined"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

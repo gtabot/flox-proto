@@ -5,7 +5,7 @@
         "main": {
             "type": "record",
             "description": "Record representing membership in a Flok.",
-            "key": "tid",
+            "key": "cid",
             "record": {
                 "type": "object",
                 "required": [

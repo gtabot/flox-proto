@@ -1,15 +1,14 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.invite.accept",
+    "id": "app.flox.flok.acceptedInvite",
     "defs": {
         "main": {
             "type": "record",
-            "description": "Record for accepting an invitation to join a Flok.",
-            "key": "tid",
+            "description": "Record for an accepted invitation to join a Flok.",
+            "key": "inviteId",
             "record": {
                 "type": "object",
                 "required": [
-                    "inviteId",
                     "flokId",
                     "invitedId",
                     "createdAt"

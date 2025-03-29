@@ -1,15 +1,23 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.leave",
+    "id": "app.flox.flok.acceptInvite",
     "defs": {
         "main": {
             "type": "procedure",
-            "description": "Leave a Flok.",
+            "description": "Accept an invitation to join a Flok.",
             "input": {
                 "encoding": "application/json",
                 "schema": {
                     "type": "object",
-                    "properties": {}
+                    "required": [
+                        "inviteId"
+                    ],
+                    "properties": {
+                        "inviteId": {
+                            "type": "string",
+                            "description": "The invite to accept"
+                        }
+                    }
                 }
             },
             "output": {
@@ -17,16 +25,12 @@
                 "schema": {
                     "type": "object",
                     "required": [
-                        "status"
+                        "sessionId"
                     ],
                     "properties": {
-                        "status": {
+                        "sessionId": {
                             "type": "string",
-                            "description": "Status of the operation",
-                            "enum": [
-                                "success",
-                                "failure"
-                            ]
+                            "description": "Session ID for accessing the Flok"
                         }
                     }
                 }

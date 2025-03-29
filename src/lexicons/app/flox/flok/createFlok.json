@@ -1,0 +1,62 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.createFlok",
+    "defs": {
+        "main": {
+            "type": "procedure",
+            "description": "Create a new Flok community.",
+            "input": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "name",
+                        "joinType"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Display name of the Flok"
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "Optional description"
+                        },
+                        "joinType": {
+                            "type": "string",
+                            "description": "How new members can join",
+                            "enum": [
+                                "open",
+                                "request",
+                                "closed"
+                            ]
+                        },
+                        "invitesAllowed": {
+                            "type": "integer",
+                            "description": "Number of invites allowed per member"
+                        },
+                        "maxMembers": {
+                            "type": "integer",
+                            "description": "Optional member cap"
+                        }
+                    }
+                }
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "sessionId"
+                    ],
+                    "properties": {
+                        "sessionId": {
+                            "type": "string",
+                            "description": "Session ID for accessing the created Flok"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

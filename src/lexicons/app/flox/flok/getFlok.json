@@ -1,0 +1,57 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.getFlok",
+    "defs": {
+        "main": {
+            "type": "query",
+            "description": "Get details about a specific Flok.",
+            "parameters": {
+                "type": "params",
+                "properties": {}
+            },
+            "output": {
+                "encoding": "application/json",
+                "schema": {
+                    "type": "object",
+                    "required": ["flokId", "name", "joinType", "createdAt"],
+                    "properties": {
+                        "flokId": {
+                            "type": "string",
+                            "description": "The Flok identifier"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Display name of the Flok"
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "Description of the Flok"
+                        },
+                        "joinType": {
+                            "type": "string",
+                            "description": "How users can join",
+                            "enum": ["open", "request", "closed"]
+                        },
+                        "invitesAllowed": {
+                            "type": "integer",
+                            "description": "Number of invites per member"
+                        },
+                        "maxMembers": {
+                            "type": "integer",
+                            "description": "Member cap"
+                        },
+                        "memberCount": {
+                            "type": "integer",
+                            "description": "Current number of members"
+                        },
+                        "createdAt": {
+                            "type": "string",
+                            "format": "datetime",
+                            "description": "When the Flok was created"
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

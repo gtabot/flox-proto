@@ -5,11 +5,10 @@
         "main": {
             "type": "record",
             "description": "Record for invitation in Flok PDS.",
-            "key": "tid",
+            "key": "inviteId",
             "record": {
                 "type": "object",
                 "required": [
-                    "inviteId",
                     "flokId",
                     "inviterId",
                     "invitedId",

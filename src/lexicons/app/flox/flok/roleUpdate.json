@@ -1,0 +1,44 @@
+{
+    "lexicon": 1,
+    "id": "app.flox.flok.roleUpdate",
+    "defs": {
+        "main": {
+            "type": "record",
+            "description": "A record of a member's role being updated in a Flok.",
+            "key": "tid",
+            "record": {
+                "type": "object",
+                "required": ["flokId", "memberId", "role", "updatedAt", "updatedBy"],
+                "properties": {
+                    "flokId": {
+                        "type": "string",
+                        "description": "The Flok where role was updated"
+                    },
+                    "memberId": {
+                        "type": "string",
+                        "description": "DID of the member"
+                    },
+                    "role": {
+                        "type": "string",
+                        "description": "The new role",
+                        "enum": ["member", "moderator", "admin"]
+                    },
+                    "previousRole": {
+                        "type": "string",
+                        "description": "The previous role",
+                        "enum": ["member", "moderator", "admin"]
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "datetime",
+                        "description": "When the role was updated"
+                    },
+                    "updatedBy": {
+                        "type": "string",
+                        "description": "DID of the member who updated the role"
+                    }
+                }
+            }
+        }
+    }
+} 

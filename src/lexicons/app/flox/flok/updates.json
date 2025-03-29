@@ -1,6 +1,6 @@
 {
     "lexicon": 1,
-    "id": "app.flox.flok.update",
+    "id": "app.flox.flok.updates",
     "defs": {
         "main": {
             "type": "record",
@@ -62,4 +62,4 @@
             }
         }
     }
-}
+} 

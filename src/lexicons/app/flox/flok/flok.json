@@ -5,11 +5,10 @@
         "main": {
             "type": "record",
             "description": "Creates a new Flok community",
-            "key": "tid",
+            "key": "flokId",
             "record": {
                 "type": "object",
                 "required": [
-                    "flokId",
                     "name",
                     "joinType",
                     "createdAt"
