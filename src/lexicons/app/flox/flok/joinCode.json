@@ -18,6 +18,10 @@
                         "type": "string",
                         "description": "Current code required to join the Flok"
                     },
+                    "alias": {
+                        "type": "string",
+                        "description": "Alias for the join code"
+                    },
                     "flokId": {
                         "type": "string",
                         "description": "The Flok this join code is for"
