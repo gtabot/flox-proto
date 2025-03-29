@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename)
 
 // Valid property types in AT Protocol Lexicon
 const VALID_PRIMITIVE_TYPES = ['string', 'boolean', 'integer', 'float', 'datetime']
-const VALID_COMPLEX_TYPES = ['array', 'object', 'blob', 'bytes', 'cid-link', 'union', 'unknown']
+const VALID_COMPLEX_TYPES = ['array', 'object', 'blob', 'bytes', 'cid-link', 'ref', 'union', 'unknown']
 const VALID_TYPES = [...VALID_PRIMITIVE_TYPES, ...VALID_COMPLEX_TYPES]
 
 // Valid key types for records
@@ -61,6 +61,17 @@ function validatePropertyType(propName: string, prop: any, defId: string) {
     if (['integer', 'float'].includes(prop.type)) {
         if (typeof prop.minimum === 'number' && typeof prop.maximum === 'number' && prop.minimum > prop.maximum) {
             throw new Error(`Invalid range: minimum > maximum for property "${propName}" in ${defId}`)
+        }
+    }
+
+    // Validate ref property
+    if (prop.type === 'ref') {
+        if (!prop.ref) {
+            throw new Error(`Ref property "${propName}" in ${defId} must specify ref target`)
+        }
+        // Validate ref format - must be either a definition name prefixed with # or a full NSID
+        if (!prop.ref.startsWith('#') && !prop.ref.match(/^[a-zA-Z][a-zA-Z0-9-]+(\.[a-zA-Z][a-zA-Z0-9-]+)*$/)) {
+            throw new Error(`Invalid ref format "${prop.ref}" for property "${propName}" in ${defId} - must be #defName or valid NSID`)
         }
     }
 }
@@ -121,9 +132,6 @@ for (const file of files) {
                 }
                 if (!def.key) {
                     throw new Error(`Missing key in record definition ${defId}`)
-                }
-                if (!VALID_RECORD_KEYS.includes(def.key)) {
-                    throw new Error(`Invalid key type "${def.key}" in record definition ${defId}`)
                 }
 
                 const props = def.record.properties

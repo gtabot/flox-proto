@@ -29,8 +29,12 @@
                         "description": "Timestamp when the user joined."
                     },
                     "role": {
-                        "type": "ref",
-                        "ref": "#memberRole"
+                        "type": "string",
+                        "enum": [
+                            "admin",
+                            "moderator",
+                            "member"
+                        ]
                     },
                     "invitedBy": {
                         "type": "string",
@@ -38,14 +42,6 @@
                     }
                 }
             }
-        },
-        "memberRole": {
-            "type": "string",
-            "enum": [
-                "admin",
-                "moderator",
-                "member"
-            ]
         }
     }
 }
